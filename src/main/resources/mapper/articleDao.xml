@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.article.dao.ArticleDao">
+    <sql id="sql">
+        id,title,descriable
+    </sql>
+    <sql id="one">
+        id,title,descriable,page
+    </sql>
+    <select id="getPage" parameterType="int" resultType="com.blog.article.entity.Article">
+        select <include refid="sql"/> from article limit #{p},4;
+    </select>
+    <select id="findOne" resultType="com.blog.article.entity.Article" parameterType="int">
+        select <include refid="one"/> from article where id=#{id};
+    </select>
+    <select id="newArticle" resultType="String">
+        select title from article order by article_post_time desc limit 5;
+    </select>
+</mapper>

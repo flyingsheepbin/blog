@@ -1,0 +1,29 @@
+.page-center{
+    width:50%;
+    height:100%;
+    float:left;
+}
+.page-left{
+    width:15%;
+    height:100%;
+    float:left;
+}
+.page-right{
+    width:33%;
+    height:100%;
+    float:right;
+}
+li a:hover{
+    background-color:gray;
+    color:white;
+}
+a:hover{
+    text-decoration-line:none;
+}
+a:hover h3{
+    color:deepskyblue;
+}
+img{
+    max-width: 100%;
+    height:auto;
+}
