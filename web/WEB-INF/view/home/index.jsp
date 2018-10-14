@@ -134,16 +134,16 @@
                         <form method="post" action="/admin/login">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="username">用户</span>
+                                    <span class="input-group-text">用户</span>
                                 </div>
-                                <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" name='username' class="form-control"   aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="password">密码</span>
+                                    <span class="input-group-text">密码</span>
                                 </div>
-                                <input type="password" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="password" name="password" class="form-control"   aria-describedby="basic-addon1">
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">登陆</button>
