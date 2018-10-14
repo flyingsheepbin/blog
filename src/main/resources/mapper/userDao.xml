@@ -6,4 +6,10 @@
     <select id="login" resultType="boolean" parameterType="com.blog.article.entity.User">
         select count(username)from article_user where username=#{username} and password=#{password};
     </select>
+    <insert id="register" parameterType="com.blog.article.entity.User">
+        insert article_user(username,password,email) values(#{username},#{password},#{email});
+    </insert>
+    <select id="check" parameterType="String" resultType="boolean">
+        select count(username) from article_user where username=#{username};
+    </select>
 </mapper>

@@ -9,7 +9,9 @@ public class User {
         this.username = username;
         this.password = password;
     }
-
+    public String toString(){
+        return username+":"+password+":"+email;
+    }
     public String getUsername() {
         return username;
     }

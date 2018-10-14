@@ -25,6 +25,9 @@
                 <a class="nav-link" href="#">联系</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="#">关于</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">登陆</a>
             </li>
         </ul>
@@ -147,7 +150,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">登陆</button>
-                                <button type="button" class="btn btn-primary">注册</button>
+                                <button type="button" class="btn btn-primary" onclick="window.location='/admin/register'">注册</button>
                             </div>
                         </form>
                     </div>
@@ -158,6 +161,9 @@
       <script src="/resource/js/jquery-3.3.1.min.js"></script>
       <script src="/resource/js/bootstrap.min.js"></script>
       <script>
+          if('${register}'=='true'){
+              alert("注册成功");
+          }
           //获取最新文章，最热文章模板函数
           function getList(id,data){
               var html='';

@@ -17,12 +17,24 @@ public class AdminController {
     @Autowired
     private UserService service;
     @RequestMapping(value="/login",method= RequestMethod.POST)
-    public String login(String username, String password, Model model){
-        User user = new User(username,password);
+    public String login(@ModelAttribute("user")User user, Model model){
         if(service.login(user)) {
-            model.addAttribute("user",username);
+            model.addAttribute("user",user.getUsername());
             return "/home/adminIndex";
         }
         return "/home/index";
+    }
+    @RequestMapping(value="/register")
+    public String register(@ModelAttribute User user,Model model){
+        if(user.getUsername()!=null&&user.getPassword()!=null&user.getEmail()!=null) {
+            if(service.check(user.getUsername())){
+                model.addAttribute("register",false);
+                System.out.println("用户已存在");
+                return "/home/register";
+            }
+            model.addAttribute("register", service.register(user));
+            return "/home/index";
+        }
+        return "/home/register";
     }
 }

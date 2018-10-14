@@ -11,9 +11,11 @@ create table article_user(
 	username varchar(20),
 	password varchar(30)
 )engine=InnoDB default charset=utf8;
-
+#添加文章‘浏览数目’字段
 alter table article add article_view_count int default 0;
-
+#添加文章‘评论数目’字段
 alter table article add article_comment_count int default 0;
-
+#添加‘用户邮箱’
 alter table article_user add email varchar(30);
+#给username添加‘唯一约束’
+alter table article_user add unique(username);
