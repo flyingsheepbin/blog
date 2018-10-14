@@ -103,31 +103,16 @@
             <div class="card  bg-light mb-3" style="max-width: 20rem;">
                 <div class="card-header">最新资讯</div>
                 <div id="newArticle" class="card-body">
-                    <a href="#" class="text-muted"></a><br>
-                    <a href="#" class="text-muted"></a><br>
-                    <a href="#" class="text-muted"></a><br>
-                    <a href="#" class="text-muted"></a><br>
-                    <a href="#" class="text-muted"></a><br>
                 </div>
             </div>
             <div class="card  bg-light mb-3" style="max-width: 20rem;">
                 <div class="card-header">热门文章</div>
-                <div class="card-body">
-                    <a href="#" class="text-muted">记一次服务器搬迁过程</a><br>
-                    <a href="#" class="text-muted">编写油猴脚本去广告教程</a><br>
-                    <a href="#" class="text-muted">如何使用idea搭建一个jeesite项目</a><br>
-                    <a href="#" class="text-muted">谷歌浏览器游戏小彩蛋</a><br>
-                    <a href="#" class="text-muted">Windows命令行恶搞</a><br>
+                <div id="mostView" class="card-body">
                 </div>
             </div>
             <div class="card  bg-light mb-3" style="max-width: 20rem;">
                 <div class="card-header">最多评论</div>
-                <div class="card-body">
-                    <a href="#" class="text-muted">记一次服务器搬迁过程</a><br>
-                    <a href="#" class="text-muted">编写油猴脚本去广告教程</a><br>
-                    <a href="#" class="text-muted">如何使用idea搭建一个jeesite项目</a><br>
-                    <a href="#" class="text-muted">谷歌浏览器游戏小彩蛋</a><br>
-                    <a href="#" class="text-muted">Windows命令行恶搞</a><br>
+                <div id="mostComment"class="card-body">
                 </div>
             </div>
             <div class="card  bg-light mb-3" style="max-width: 20rem;">
@@ -140,6 +125,14 @@
       <script src="/resource/js/jquery-3.3.1.min.js"></script>
       <script src="/resource/js/bootstrap.min.js"></script>
       <script>
+          //获取最新文章，最热文章模板函数
+          function getList(id,data){
+              var html='';
+              for(var i=0;i<5;i++){
+                  html+='<a href="/article/'+data[i].id+'"class="text-muted">'+data[i].title+'</a><br>';
+              }
+              $(id)[0].innerHTML=html;
+          }
           function get(i) {
               $.ajax({
                   url: "http://localhost:8080/"+i,
@@ -159,15 +152,24 @@
              url:"http://localhost:8080/article/newArticle",
              type:"GET",
              success:function(data){
-                 var html='';
-                 for(var i=0;i<5;i++){
-                     html+='<a href="/article/'+data[i].id+'"class="text-muted">'+data[i].title+'</a><br>';
-                 }
-                 $('#newArticle')[0].innerHTML=html;
+                 getList('#newArticle',data);
              }
-         })
+         });
+          $.ajax({
+              url:"http://localhost:8080/article/mostView",
+              type:"GET",
+              success:function(data){
+                  getList('#mostView',data);
+              }
+          });
+          $.ajax({
+              url:"http://localhost:8080/article/mostComment",
+              type:"GET",
+              success:function(data){
+                  getList('#mostComment',data);
+              }
+          });
           get(0);
-
       </script>
     </body>
 </html>

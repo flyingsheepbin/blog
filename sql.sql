@@ -11,3 +11,7 @@ create table article_user(
 	username varchar(20),
 	password varchar(30)
 )engine=InnoDB default charset=utf8;
+
+alter table article add article_view_count int default 0;
+
+alter table article add article_comment_count int default 0;

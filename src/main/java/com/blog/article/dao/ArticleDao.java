@@ -9,4 +9,6 @@ public interface ArticleDao {
     List<Article> getPage(int p);
     Article findOne(int id);
     List<Article> newArticle();
+    List<Article> mostView();
+    List<Article> mostComment();
 }

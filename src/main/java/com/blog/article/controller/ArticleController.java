@@ -29,4 +29,10 @@ public class ArticleController {
     public List<Article> newArticle(){
         return service.newArticle();
     }
+    @RequestMapping("/mostView")
+    @ResponseBody
+    public List<Article> mostView(){return service.mostView(); }
+    @RequestMapping("/mostComment")
+    @ResponseBody
+    public List<Article> mostComment(){return service.mostComment();}
 }

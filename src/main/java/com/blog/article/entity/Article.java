@@ -8,6 +8,24 @@ public class Article {
     private String descriable;
     private String page;
     private Date article_post_time;
+    private int article_view_count;
+    private int article_comment_count;
+
+    public int getArticle_comment_count() {
+        return article_comment_count;
+    }
+
+    public void setArticle_comment_count(int article_comment_count) {
+        this.article_comment_count = article_comment_count;
+    }
+
+    public int getArticle_view_count() {
+        return article_view_count;
+    }
+
+    public void setArticle_view_count(int article_view_count) {
+        this.article_view_count = article_view_count;
+    }
 
     public Date getArticle_post_time() {
         return article_post_time;
@@ -28,6 +46,7 @@ public class Article {
     public String toString(){
         return id+":"+descriable;
     }
+
     public int getId() {
         return id;
     }
@@ -44,8 +63,6 @@ public class Article {
         this.title = title;
     }
 
-
-
     public String getPage() {
         return page;
     }
@@ -53,4 +70,5 @@ public class Article {
     public void setPage(String page) {
         this.page = page;
     }
+
 }

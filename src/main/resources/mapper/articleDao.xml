@@ -12,4 +12,10 @@
     <select id="newArticle" resultType="com.blog.article.entity.Article">
         select id,title from article order by article_post_time desc limit 5;
     </select>
+    <select id="mostView" resultType="com.blog.article.entity.Article">
+        select id,title from article order by article_view_count desc limit 5;
+    </select>
+    <select id="mostComment" resultType="com.blog.article.entity.Article">
+        select id,title from article order by article_comment_count desc limit 5;
+    </select>
 </mapper>
