@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/")
-public class Home {
+public class HomeController {
     @Autowired
     private ArticleService service;
     @RequestMapping("/")
@@ -23,7 +23,7 @@ public class Home {
     }
     @RequestMapping("/{page}")
     @ResponseBody
-    public List<Article> page(@PathVariable int page, Model model){
+    public List<Article> page(@PathVariable int page){
         List<Article> list = service.getPage(page);
         Iterator<Article> it = list.iterator();
         while(it.hasNext()){

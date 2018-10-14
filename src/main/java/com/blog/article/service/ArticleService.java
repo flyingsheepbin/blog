@@ -2,11 +2,9 @@ package com.blog.article.service;
 
 import com.blog.article.dao.ArticleDao;
 import com.blog.article.entity.Article;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service
