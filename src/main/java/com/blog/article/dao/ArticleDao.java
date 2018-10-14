@@ -8,5 +8,5 @@ import java.util.List;
 public interface ArticleDao {
     List<Article> getPage(int p);
     Article findOne(int id);
-    String[] newArticle();
+    List<Article> newArticle();
 }

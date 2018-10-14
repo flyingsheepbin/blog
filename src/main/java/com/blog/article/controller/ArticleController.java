@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @Controller
 @RequestMapping("/article")
@@ -24,7 +26,7 @@ public class ArticleController {
     }
     @RequestMapping("/newArticle")
     @ResponseBody
-    public String[] newArticle(){
+    public List<Article> newArticle(){
         return service.newArticle();
     }
 }

@@ -9,7 +9,7 @@
     <select id="findOne" resultType="com.blog.article.entity.Article" parameterType="int">
         select id,title,descriable,page from article where id=#{id};
     </select>
-    <select id="newArticle" resultType="String">
-        select title from article order by article_post_time desc limit 5;
+    <select id="newArticle" resultType="com.blog.article.entity.Article">
+        select id,title from article order by article_post_time desc limit 5;
     </select>
 </mapper>

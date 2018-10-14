@@ -102,12 +102,12 @@
         <div class="page-right">
             <div class="card  bg-light mb-3" style="max-width: 20rem;">
                 <div class="card-header">最新资讯</div>
-                <div class="card-body">
-                    <a href="#" class="text-muted">记一次服务器搬迁过程</a><br>
-                    <a href="#" class="text-muted">编写油猴脚本去广告教程</a><br>
-                    <a href="#" class="text-muted">如何使用idea搭建一个jeesite项目</a><br>
-                    <a href="#" class="text-muted">谷歌浏览器游戏小彩蛋</a><br>
-                    <a href="#" class="text-muted">Windows命令行恶搞</a><br>
+                <div id="newArticle" class="card-body">
+                    <a href="#" class="text-muted"></a><br>
+                    <a href="#" class="text-muted"></a><br>
+                    <a href="#" class="text-muted"></a><br>
+                    <a href="#" class="text-muted"></a><br>
+                    <a href="#" class="text-muted"></a><br>
                 </div>
             </div>
             <div class="card  bg-light mb-3" style="max-width: 20rem;">
@@ -155,7 +155,19 @@
                   }
               })
           }
+         $.ajax({
+             url:"http://localhost:8080/article/newArticle",
+             type:"GET",
+             success:function(data){
+                 var html='';
+                 for(var i=0;i<5;i++){
+                     html+='<a href="/article/'+data[i].id+'"class="text-muted">'+data[i].title+'</a><br>';
+                 }
+                 $('#newArticle')[0].innerHTML=html;
+             }
+         })
           get(0);
+
       </script>
     </body>
 </html>
