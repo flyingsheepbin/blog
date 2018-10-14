@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.article.dao.UserDao">
+    <select id="login" resultType="boolean" parameterType="com.blog.article.entity.User">
+        select count(username)from article_user where username=#{user.username} and password=#{user.password};
+    </select>
+</mapper>

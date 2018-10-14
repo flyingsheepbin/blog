@@ -24,6 +24,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">联系</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">登陆</a>
+            </li>
         </ul>
         <br>
         <div class="page-left"></div>
@@ -118,6 +121,36 @@
             <div class="card  bg-light mb-3" style="max-width: 20rem;">
                 <div class="card-header">热门标签</div>
                 <div class="card-body">
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">登陆</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="/admin/login">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="username">用户</span>
+                                </div>
+                                <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="password">密码</span>
+                                </div>
+                                <input type="password" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">登陆</button>
+                                <button type="button" class="btn btn-primary">注册</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

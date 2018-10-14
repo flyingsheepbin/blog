@@ -15,3 +15,5 @@ create table article_user(
 alter table article add article_view_count int default 0;
 
 alter table article add article_comment_count int default 0;
+
+alter table article_user add email varchar(30);
