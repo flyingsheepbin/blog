@@ -23,7 +23,8 @@ public class ArticleController {
         return "/home/page";
     }
     @RequestMapping("/newArticle")
-    public void newArticle(Model m){
-        m.addAttribute("newArticle",service.newArticle());
+    @ResponseBody
+    public String[] newArticle(){
+        return service.newArticle();
     }
 }

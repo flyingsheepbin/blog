@@ -17,5 +17,5 @@ public class ArticleService {
     public Article findOne(int id){
         return dao.findOne(id);
     }
-    public String newArticle(){return dao.newArticle();}
+    public String[] newArticle(){return dao.newArticle();}
 }
