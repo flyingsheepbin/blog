@@ -2,6 +2,7 @@ package com.blog.article.controller;
 
 import com.blog.article.entity.Article;
 import com.blog.article.service.ArticleService;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,5 +32,25 @@ public class HomeController {
         }
         System.out.println(list);
         return list;
+    }
+    @RequestMapping("help")
+    public String help(Model model){
+        model.addAttribute("active","help");
+        return "/home/page";
+    }
+    @RequestMapping("contact")
+    public String contact(Model model){
+        model.addAttribute("active","contact");
+        return "/home/page";
+    }
+    @RequestMapping("link")
+    public String link(Model model){
+        model.addAttribute("active","link");
+        return "/home/page";
+    }
+    @RequestMapping("about")
+    public String about(Model model){
+        model.addAttribute("active","about");
+        return "/home/page";
     }
 }
