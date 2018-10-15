@@ -28,6 +28,9 @@
                 <a class="nav-link" href="#">关于</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="#">帮助</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">登陆</a>
             </li>
         </ul>
