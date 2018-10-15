@@ -13,8 +13,11 @@ create table article_user(
 	username varchar(20),
 	password varchar(30)
 )engine=InnoDB default charset=utf8;
+#添加被查看数量
 alter table article add article_view_count int default 0;
+#添加评论数
 alter table article add article_comment_count int default 0;
+#添加用户邮箱
 alter table article_user add email varchar(30);
 #给username添加唯一约束
 alter table article_user add unique(username);
