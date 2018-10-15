@@ -12,59 +12,59 @@
     </head>
     <body class="bg-light text-dark">
         <!--header-->
-        <br>
-        <a href="/" style="float:left;" class="text-dark"><h3>会飞的羊博客</h3></a>
-        <ul class="nav justify-content-end nav-pills ">
-            <li class="nav-item active">
-                <a class="nav-link active" href="/">首页</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/link">链接</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contact">联系</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">关于</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/help">帮助</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">登陆</a>
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">登陆</h5>
-                            </div>
-                            <div class="modal-body">
-                                <form method="post" action="/admin/login">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">用户</span>
+        <div class="head">
+            <a href="/" style="float:left;" class="text-dark"><h3>会飞的羊博客</h3></a>
+            <ul class="nav justify-content-end nav-pills ">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="/">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/link">链接</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">联系</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">关于</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/help">帮助</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">登陆</a>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">登陆</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" action="/admin/login">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">用户</span>
+                                            </div>
+                                            <input type="text" name='username' class="form-control"   aria-describedby="basic-addon1">
                                         </div>
-                                        <input type="text" name='username' class="form-control"   aria-describedby="basic-addon1">
-                                    </div>
 
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">密码</span>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">密码</span>
+                                            </div>
+                                            <input type="password" name="password" class="form-control"   aria-describedby="basic-addon1">
                                         </div>
-                                        <input type="password" name="password" class="form-control"   aria-describedby="basic-addon1">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">登陆</button>
-                                        <button type="button" class="btn btn-primary" onclick="window.location='/admin/register'">注册</button>
-                                    </div>
-                                </form>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">登陆</button>
+                                            <button type="button" class="btn btn-primary" onclick="window.location='/admin/register'">注册</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </li>
-        </ul>
-        <br>
+                </li>
+            </ul>
+        </div>
         <div class="content-box">
             <div class="page-left"></div>
             <div id="article-content" class="page-center">
@@ -158,6 +158,22 @@
                 <div class="card  bg-light mb-3" style="max-width: 20rem;">
                     <div class="card-header">热门标签</div>
                     <div class="card-body">
+                        <a href="#" class="badge badge-primary">Primary</a>
+                        <a href="#" class="badge badge-secondary">Secondary</a>
+                        <a href="#" class="badge badge-success">Success</a>
+                        <a href="#" class="badge badge-danger">Danger</a>
+                        <a href="#" class="badge badge-warning">Warning</a>
+                        <a href="#" class="badge badge-info">Info</a>
+                        <a href="#" class="badge badge-light">Light</a>
+                        <a href="#" class="badge badge-dark">Dark</a>
+                        <a href="#" class="badge badge-primary">Primary</a>
+                        <a href="#" class="badge badge-secondary">Secondary</a>
+                        <a href="#" class="badge badge-success">Success</a>
+                        <a href="#" class="badge badge-danger">Danger</a>
+                        <a href="#" class="badge badge-warning">Warning</a>
+                        <a href="#" class="badge badge-info">Info</a>
+                        <a href="#" class="badge badge-light">Light</a>
+                        <a href="#" class="badge badge-dark">Dark</a>
                     </div>
                 </div>
             </div>

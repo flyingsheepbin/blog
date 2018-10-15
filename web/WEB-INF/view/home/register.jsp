@@ -14,7 +14,9 @@
     <link href="/resource/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <a href="/" style="float:left;" class="text-dark"><h3>会飞的羊博客</h3></a>
+    <div class="head">
+        <a href="/" style="float:left;" class="text-dark"><h3>会飞的羊博客</h3></a>
+    </div>
     <div class="row" style="height:30%;"></div>
     <div class="row" style="height:30%;">
         <div class="col-sm"></div>
