@@ -12,4 +12,6 @@ public class UserService {
     public boolean login(User user){
         return dao.login(user);
     }
+    public boolean register(User user){return dao.register(user);}
+    public boolean check(String username){return dao.check(username);}
 }

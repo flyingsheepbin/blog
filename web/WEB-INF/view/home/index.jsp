@@ -25,6 +25,9 @@
                 <a class="nav-link" href="#">联系</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="#">关于</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">登陆</a>
             </li>
         </ul>
@@ -134,20 +137,20 @@
                         <form method="post" action="/admin/login">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="username">用户</span>
+                                    <span class="input-group-text">用户</span>
                                 </div>
-                                <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" name='username' class="form-control"   aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="password">密码</span>
+                                    <span class="input-group-text">密码</span>
                                 </div>
-                                <input type="password" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="password" name="password" class="form-control"   aria-describedby="basic-addon1">
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">登陆</button>
-                                <button type="button" class="btn btn-primary">注册</button>
+                                <button type="button" class="btn btn-primary" onclick="window.location='/admin/register'">注册</button>
                             </div>
                         </form>
                     </div>
@@ -158,6 +161,9 @@
       <script src="/resource/js/jquery-3.3.1.min.js"></script>
       <script src="/resource/js/bootstrap.min.js"></script>
       <script>
+          if('${register}'=='true'){
+              alert("注册成功");
+          }
           //获取最新文章，最热文章模板函数
           function getList(id,data){
               var html='';
