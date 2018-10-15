@@ -35,103 +35,105 @@
             </li>
         </ul>
         <br>
-        <div class="page-left"></div>
-        <div id="article-content" class="page-center">
-            <!--article-->
-            <div id="demo" class="carousel slide" data-ride="carousel">
-                <!-- 指示符 -->
-                <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
-                </ul>
+        <div class="content-box">
+            <div class="page-left"></div>
+            <div id="article-content" class="page-center">
+                <!--article-->
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <!-- 指示符 -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
 
-                <!-- 轮播图片 -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+                    <!-- 轮播图片 -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
-                    </div>
-                </div>
 
-                <!-- 左右切换按钮 -->
-                <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#demo" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-            </div><br>
-            <div class="card" style="width: 48rem;">
-                <div id="article-page0" class="card-body">
-                    <%--<h5 class="card-title">记一次服务器搬迁过程</h5>--%>
-                    <%--<p class="card-text">因为腾讯云的学生机已经快到期了，所以博主得转移阵地前往阿里云了。不过不知道是不是优惠了，阿里云学生机114一年居然有2G内存，美滋滋啊。不过搬迁博客还是挺麻烦的，用了一上午加下午两个小时才弄好。好了，...</p>--%>
-                    <%--<a href="#" class="card-link">收藏</a>--%>
-                    <%--<a href="#" class="card-link">阅读全文</a>--%>
-                </div>
-            </div><br>
-            <div class="card" style="width: 48rem;">
-                <div id="article-page1" class="card-body">
-                </div>
-            </div><br>
-            <div class="card" style="width: 48rem;">
-                <div id="article-page2" class="card-body">
-                </div>
-            </div><br>
-            <div class="card" style="width: 48rem;">
-                <div id="article-page3" class="card-body">
-                </div>
-            </div><br>
-            <!--foot-->
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" onclick="get(0)">1</a></li>
-                    <li class="page-item"><a class="page-link" onclick="get(1)">2</a></li>
-                    <li class="page-item"><a class="page-link" onclick="get(2)">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="page-right">
-            <div class="card  bg-light mb-3" style="max-width: 20rem;">
-                <div class="card-header">最新资讯</div>
-                <div id="newArticle" class="card-body">
-                </div>
+                    <!-- 左右切换按钮 -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div><br>
+                <div class="card" style="width: 48rem;">
+                    <div id="article-page0" class="card-body">
+                        <%--<h5 class="card-title">记一次服务器搬迁过程</h5>--%>
+                        <%--<p class="card-text">因为腾讯云的学生机已经快到期了，所以博主得转移阵地前往阿里云了。不过不知道是不是优惠了，阿里云学生机114一年居然有2G内存，美滋滋啊。不过搬迁博客还是挺麻烦的，用了一上午加下午两个小时才弄好。好了，...</p>--%>
+                        <%--<a href="#" class="card-link">收藏</a>--%>
+                        <%--<a href="#" class="card-link">阅读全文</a>--%>
+                    </div>
+                </div><br>
+                <div class="card" style="width: 48rem;">
+                    <div id="article-page1" class="card-body">
+                    </div>
+                </div><br>
+                <div class="card" style="width: 48rem;">
+                    <div id="article-page2" class="card-body">
+                    </div>
+                </div><br>
+                <div class="card" style="width: 48rem;">
+                    <div id="article-page3" class="card-body">
+                    </div>
+                </div><br>
+                <!--foot-->
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" onclick="get(0)">1</a></li>
+                        <li class="page-item"><a class="page-link" onclick="get(1)">2</a></li>
+                        <li class="page-item"><a class="page-link" onclick="get(2)">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <div class="card  bg-light mb-3" style="max-width: 20rem;">
-                <div class="card-header">热门文章</div>
-                <div id="mostView" class="card-body">
+            <div class="page-right">
+                <div class="card  bg-light mb-3" style="max-width: 20rem;">
+                    <div class="card-header">最新资讯</div>
+                    <div id="newArticle" class="card-body">
+                    </div>
                 </div>
-            </div>
-            <div class="card  bg-light mb-3" style="max-width: 20rem;">
-                <div class="card-header">最多评论</div>
-                <div id="mostComment"class="card-body">
+                <div class="card  bg-light mb-3" style="max-width: 20rem;">
+                    <div class="card-header">热门文章</div>
+                    <div id="mostView" class="card-body">
+                    </div>
                 </div>
-            </div>
-            <div class="card  bg-light mb-3" style="max-width: 20rem;">
-                <div class="card-header">热门标签</div>
-                <div class="card-body">
+                <div class="card  bg-light mb-3" style="max-width: 20rem;">
+                    <div class="card-header">最多评论</div>
+                    <div id="mostComment"class="card-body">
+                    </div>
+                </div>
+                <div class="card  bg-light mb-3" style="max-width: 20rem;">
+                    <div class="card-header">热门标签</div>
+                    <div class="card-body">
+                    </div>
                 </div>
             </div>
         </div>
         <footer>
-            <
+            这里是页脚
         </footer>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
