@@ -1,6 +1,6 @@
 .content-box{
     width:100%;
-    height:180%;
+    height:170%;
 }
 .page-center{
     width:50%;
@@ -31,10 +31,23 @@ img{
     max-width: 100%;
     height:auto;
 }
-footer{
+.above_foot{
     width:100%;
     height:20%;
     float:left;
     background:#282c34;
     color:#fff;
 }
+.foot-before{
+    margin-top:20px;
+    margin-left:200px;
+}
+footer{
+    margin-top:10px;
+    text-align:center;
+    width:100%;
+    height:7%;
+    float:left;
+    background:#f7f7f7;
+}
+

@@ -162,8 +162,14 @@
                 </div>
             </div>
         </div>
+        <div class="above_foot">
+            <div class="foot-before">
+                <div>关于本站</div>
+                <div>关注我们</div>
+            </div>
+        </div>
         <footer>
-            这里是页脚
+            <div>版权所有©flyingsheep 赣ICP备17015733号 公安备案36098102000129</div>
         </footer>
       <!--添加一些必要的js-->
       <script src="/resource/js/jquery-3.3.1.min.js"></script>
