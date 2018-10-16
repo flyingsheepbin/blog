@@ -58,4 +58,29 @@ footer{
     float:left;
     background:#f7f7f7;
 }
-
+.article-img{
+    width:90%;
+}
+.content-img{
+    width:100%;
+    height:25%;
+}
+.div-img{
+    width:30%;
+    height:12%;
+    float:left;
+}
+.article{
+    width:100%;
+    height:15%;
+    float:left;
+    background-color:white;
+    padding-top:20px;
+    margin-bottom:20px;
+    padding-left:20px;
+}
+.article-content{
+    width:70%;
+    height:12%;
+    float:left;
+}

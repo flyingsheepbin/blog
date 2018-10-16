@@ -80,13 +80,13 @@
                     <!-- 轮播图片 -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+                            <img src="/resource/img/jeesite.png" class="content-img">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+                            <img src="/resource/img/ege2.jpg" class="content-img">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+                            <img src="/resource/img/google.jpg" class="content-img">
                         </div>
                     </div>
 
@@ -98,42 +98,57 @@
                         <span class="carousel-control-next-icon"></span>
                     </a>
                 </div><br>
-                <div class="card" style="width: 48rem;">
-                    <div id="article-page0" class="card-body">
+
+                <div class="article" style="width: 48rem;display:inline;">
+                    <div class="div-img">
+                        <img src="/resource/img/script.jpg" class="rounded float-left article-img" alt="...">
                     </div>
-                </div><br>
-                <div class="card" style="width: 48rem;">
-                    <div id="article-page1" class="card-body">
+                    <div id="article-page0" class="article-content" style="display:inline;">
                     </div>
-                </div><br>
-                <div class="card" style="width: 48rem;">
-                    <div id="article-page2" class="card-body">
+                </div>
+                <div class="article" style="width: 48rem;display:inline;">
+                    <div class="div-img">
+                        <img src="/resource/img/script.jpg" class="rounded float-left article-img" alt="...">
                     </div>
-                </div><br>
-                <div class="card" style="width: 48rem;">
-                    <div id="article-page3" class="card-body">
+                    <div id="article-page1" class="article-content" style="display:inline;">
                     </div>
-                </div><br>
+                </div>
+                <div class="article" style="width: 48rem;display:inline;">
+                    <div class="div-img">
+                        <img src="/resource/img/script.jpg" class="rounded float-left article-img" alt="...">
+                    </div>
+                    <div id="article-page2" class="article-content" style="display:inline;">
+                    </div>
+                </div>
+                <div class="article" style="width: 48rem;display:inline;">
+                    <div class="div-img">
+                        <img src="/resource/img/script.jpg" class="rounded float-left article-img" alt="...">
+                    </div>
+                    <div id="article-page3" class="article-content" style="display:inline;">
+                    </div>
+                </div>
                 <!--foot-->
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" onclick="get(0)">1</a></li>
-                        <li class="page-item"><a class="page-link" onclick="get(1)">2</a></li>
-                        <li class="page-item"><a class="page-link" onclick="get(2)">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="float-right">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" onclick="get(0)">1</a></li>
+                            <li class="page-item"><a class="page-link" onclick="get(1)">2</a></li>
+                            <li class="page-item"><a class="page-link" onclick="get(2)">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
             <div class="page-right">
                 <div class="card  bg-light mb-3" style="max-width: 20rem;">
