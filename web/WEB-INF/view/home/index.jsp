@@ -100,10 +100,6 @@
                 </div><br>
                 <div class="card" style="width: 48rem;">
                     <div id="article-page0" class="card-body">
-                        <%--<h5 class="card-title">记一次服务器搬迁过程</h5>--%>
-                        <%--<p class="card-text">因为腾讯云的学生机已经快到期了，所以博主得转移阵地前往阿里云了。不过不知道是不是优惠了，阿里云学生机114一年居然有2G内存，美滋滋啊。不过搬迁博客还是挺麻烦的，用了一上午加下午两个小时才弄好。好了，...</p>--%>
-                        <%--<a href="#" class="card-link">收藏</a>--%>
-                        <%--<a href="#" class="card-link">阅读全文</a>--%>
                     </div>
                 </div><br>
                 <div class="card" style="width: 48rem;">
