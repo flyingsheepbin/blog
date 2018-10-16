@@ -84,3 +84,21 @@ footer{
     height:12%;
     float:left;
 }
+.comment{
+    height: 20% ;
+    width:100%;
+}
+/*
+ admin/index.jsp
+ */
+
+.menu-list{
+    width:30%;
+    height:100%;
+    float:left;
+}
+.article-page{
+    width:80%;
+    height:100%;
+    float:left;
+}

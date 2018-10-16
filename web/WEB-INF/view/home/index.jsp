@@ -13,6 +13,9 @@
     <body class="bg-light text-dark">
         <!--header-->
         <div class="head">
+            <div id="welcome">
+                欢迎光临！
+            </div>
             <a href="/" style="float:left;" class="text-dark"><h3>会飞的羊博客</h3></a>
             <ul class="nav justify-content-end nav-pills ">
                 <li class="nav-item active">
@@ -204,6 +207,9 @@
       <script>
           if('${register}'=='true'){
               alert("注册成功");
+          }
+          if('${user}'!=''){
+              $('#welcome')[0].innerHTML="您好！${user}";
           }
           //获取最新文章，最热文章模板函数
           function getList(id,data){

@@ -19,7 +19,7 @@
         <a href="/" style="float:left;" class="text-dark"><h3>会飞的羊博客</h3></a>
         <ul class="nav justify-content-end nav-pills ">
             <li class="nav-item active">
-                <a class="nav-link active" href="/">首页</a>
+                <a class="nav-link" href="/">首页</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/link">链接</a>
@@ -69,7 +69,19 @@
         </ul>
     </div>
     <div class="page-left"></div>
-    <div class="page-center"><h1>${obj.title}</h1>${obj.page}<a href="/article/edit">编辑</a></div>
+    <div class="page-center">
+        <div>
+            <h1>${obj.title}</h1>
+            ${obj.page}
+        </div>
+        <div class="comment">
+            <label for="exampleFormControlTextarea1">评论</label>
+            <form>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea><br>
+                <button type="button" class="btn btn-default">提交评论</button>
+            </form>
+        </div>
+    </div>
     <div class="page-right"></div>
     <script src="/resource/js/jquery-3.3.1.min.js"></script>
     <script src="/resource/js/bootstrap.min.js"></script>

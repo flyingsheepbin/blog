@@ -20,7 +20,6 @@ public class AdminController {
     public String login(@ModelAttribute("user")User user, Model model){
         if(service.login(user)) {
             model.addAttribute("user",user.getUsername());
-            return "/home/adminIndex";
         }
         return "/home/index";
     }
@@ -36,5 +35,9 @@ public class AdminController {
             return "/home/index";
         }
         return "/home/register";
+    }
+    @RequestMapping("/manager")
+    public String manager(){
+        return "/admin/index";
     }
 }

@@ -11,6 +11,8 @@
     <title>编辑</title>
 </head>
 <body>
-
+    <div contentEditable>
+        ${page}
+    </div>
 </body>
 </html>
