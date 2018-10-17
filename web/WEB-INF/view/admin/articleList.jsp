@@ -23,13 +23,28 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>ID</th><th>标题</th><th>日期</th><th>访问量</th>
+                    <th>ID</th><th>标题</th><th>日期</th><th>访问量</th><th>操作</th>
                 </tr>
                 </thead>
                 <tbody id="article">
                     ${tbody}
                 </tbody>
             </table>
+            <div style="float:right;">
+                <button type="button" class="btn btn-secondary btn-sm">
+                    <a href="#" class="text-white"><<</a>
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm">
+                    <a href="#" class="text-white"><</a>
+                </button>
+                第1页,共${count}页
+                <button type="button" class="btn btn-secondary btn-sm">
+                    <a href="#" class="text-white">></a>
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm">
+                    <a href="#" class="text-white">>></a>
+                </button>
+            </div>
         </div>
     </div>
 </body>

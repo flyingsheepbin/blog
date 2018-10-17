@@ -12,4 +12,5 @@ public interface ArticleDao {
     List<Article> mostView();
     List<Article> mostComment();
     List<Article> list();
+    int getArticleCount();
 }

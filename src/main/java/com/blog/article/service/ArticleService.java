@@ -21,4 +21,5 @@ public class ArticleService {
     public List<Article> mostView(){return dao.mostView();}
     public List<Article> mostComment(){return dao.mostComment();}
     public List<Article> list(){return dao.list();}
+    public int getArticleCount(){return dao.getArticleCount();}
 }

@@ -45,8 +45,13 @@ public class ArticleController {
                     +article.getId()+"</td><td>"
                     +article.getTitle()+"</td><td>"
                     +article.getArticle_post_time()+"</td><td>"
-                    +article.getArticle_view_count()+"</tr>");
+                    +article.getArticle_view_count()
+                    +"<td><button type='button' class='btn btn-primary btn-sm'>编辑</td></tr>");
             model.addAttribute("tbody",html.toString());
+            int count = service.getArticleCount();
+            if(count%10!=0)
+                count+=10;
+            model.addAttribute("count",count/10);
         }
         return "/admin/articleList";
     }

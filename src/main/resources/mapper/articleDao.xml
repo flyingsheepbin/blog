@@ -21,4 +21,7 @@
     <select id="list" resultType="com.blog.article.entity.Article">
         select id,title,article_post_time,article_view_count from article limit 0,10;
     </select>
+    <select id="getArticleCount" resultType="int">
+        select count(id) from article;
+    </select>
 </mapper>
