@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <link href="/resource/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resource/css/style.css">
+    <link href="/resource/css/style.css" rel="stylesheet">
 </head>
 <body>
     <div class="card" style="width: 91%;height:100%">
@@ -48,4 +48,11 @@
         </div>
     </div>
 </body>
+    <script src="/resource/js/jquery-3.3.1.min.js"></script>
+    <script src="/resource/js/bootstrap.min.js"></script>
+    <script>
+        function edit(id){
+            window.location = "/article/edit/"+id;
+        }
+    </script>
 </html>

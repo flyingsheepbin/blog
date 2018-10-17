@@ -24,6 +24,11 @@ public class ArticleController {
         m.addAttribute("obj",article);
         return "/home/page";
     }
+    @RequestMapping(value="/edit/{p}",method=RequestMethod.GET)
+    public String edit(@PathVariable int p,Model m){
+        m.addAttribute("edit_page",service.findOne(p));
+        return "/admin/edit";
+    }
     @RequestMapping("/newArticle")
     @ResponseBody
     public List<Article> newArticle(){
@@ -46,7 +51,7 @@ public class ArticleController {
                     +article.getTitle()+"</td><td>"
                     +article.getArticle_post_time()+"</td><td>"
                     +article.getArticle_view_count()
-                    +"<td><button type='button' class='btn btn-primary btn-sm'>编辑</td></tr>");
+                    +"<td><button type='button' class='btn btn-primary btn-sm' onclick='edit("+article.getId()+")'>编辑</td></tr>");
             model.addAttribute("tbody",html.toString());
             int count = service.getArticleCount();
             if(count%10!=0)
@@ -55,4 +60,5 @@ public class ArticleController {
         }
         return "/admin/articleList";
     }
+
 }
