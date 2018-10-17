@@ -20,4 +20,5 @@ public class ArticleService {
     public List<Article> newArticle(){return dao.newArticle();}
     public List<Article> mostView(){return dao.mostView();}
     public List<Article> mostComment(){return dao.mostComment();}
+    public List<Article> list(){return dao.list();}
 }

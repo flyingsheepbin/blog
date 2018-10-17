@@ -35,4 +35,19 @@ public class ArticleController {
     @RequestMapping("/mostComment")
     @ResponseBody
     public List<Article> mostComment(){return service.mostComment();}
+    @RequestMapping("/view")
+    public String view(Model model){
+        StringBuilder html=new StringBuilder();
+        List<Article> data = service.list();
+        for(int i=0;i<10;i++){
+            Article article = data.get(i);
+            html.append("<tr><td>"
+                    +article.getId()+"</td><td>"
+                    +article.getTitle()+"</td><td>"
+                    +article.getArticle_post_time()+"</td><td>"
+                    +article.getArticle_view_count()+"</tr>");
+            model.addAttribute("tbody",html.toString());
+        }
+        return "/admin/articleList";
+    }
 }

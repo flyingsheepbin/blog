@@ -11,4 +11,5 @@ public interface ArticleDao {
     List<Article> newArticle();
     List<Article> mostView();
     List<Article> mostComment();
+    List<Article> list();
 }

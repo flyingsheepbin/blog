@@ -18,4 +18,7 @@
     <select id="mostComment" resultType="com.blog.article.entity.Article">
         select id,title from article order by article_comment_count desc limit 5;
     </select>
+    <select id="list" resultType="com.blog.article.entity.Article">
+        select id,title,article_post_time,article_view_count from article limit 0,10;
+    </select>
 </mapper>
