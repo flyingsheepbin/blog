@@ -31,19 +31,11 @@
                 </tbody>
             </table>
             <div style="float:right;">
-                <button type="button" class="btn btn-secondary btn-sm">
-                    <a href="#" class="text-white"><<</a>
-                </button>
-                <button type="button" class="btn btn-secondary btn-sm">
-                    <a href="#" class="text-white"><</a>
-                </button>
-                第1页,共${count}页
-                <button type="button" class="btn btn-secondary btn-sm">
-                    <a href="#" class="text-white">></a>
-                </button>
-                <button type="button" class="btn btn-secondary btn-sm">
-                    <a href="#" class="text-white">>></a>
-                </button>
+                <a href="/article/view/0" class="text-white btn btn-secondary btn-sm"><<</a>
+                <a href="/article/view/${now-2}" class="text-white btn btn-secondary btn-sm"><</a>
+                第${now}页,共${count}页
+                <a href="/article/view/1" class="btn text-white btn-secondary btn-sm">></a>
+                <a href="/article/view/${count-1}" class="text-white btn btn-secondary btn-sm">>></a>
             </div>
         </div>
     </div>

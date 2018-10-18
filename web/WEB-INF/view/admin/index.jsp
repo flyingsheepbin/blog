@@ -22,7 +22,7 @@
                 <a href="/" class="nav-link text-white">仪表盘</a>
             </button>
             <button type="button" class="btn  btn-secondary">
-                <a href="/" class="nav-link text-white">文章</a>
+                <a href="/admin/manager" class="nav-link text-white">文章</a>
             </button>
             <button type="button" class="btn  btn-secondary">
                 <a href="/" class="nav-link text-white">评论</a>
@@ -52,20 +52,14 @@
                 <a href="/" class="nav-link text-white">链接</a>
             </button>
             <button type="button" class="btn  btn-secondary">
-                <a href="/" class="nav-link text-white">网址</a>
-            </button>
-            <button type="button" class="btn  btn-secondary">
                 <a href="/" class="nav-link text-white">页面</a>
             </button>
             <button type="button" class="btn  btn-secondary">
                 <a href="/" class="nav-link text-white">媒体</a>
             </button>
-            <button type="button" class="btn  btn-secondary">
-                <a href="/" class="nav-link text-white">插件</a>
-            </button>
         </div>
     </div>
-    <iframe src="/article/view" style="width: 91%;height:112%">
+    <iframe src="/article/view/0" style="width: 91%;height:100%">
     </iframe>
     <script src="/resource/js/jquery-3.3.1.min.js"></script>
     <script src="/resource/js/bootstrap.min.js"></script>

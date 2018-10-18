@@ -40,11 +40,13 @@ public class ArticleController {
     @RequestMapping("/mostComment")
     @ResponseBody
     public List<Article> mostComment(){return service.mostComment();}
-    @RequestMapping("/view")
-    public String view(Model model){
+    @RequestMapping("/view/{p}")
+    public String view(@PathVariable int p,Model model){
+        if(p<0)
+            p=0;
         StringBuilder html=new StringBuilder();
-        List<Article> data = service.list();
-        for(int i=0;i<10;i++){
+        List<Article> data = service.list(p*10);
+        for(int i=0;i<data.size();i++){
             Article article = data.get(i);
             html.append("<tr><td>"
                     +article.getId()+"</td><td>"
@@ -57,6 +59,7 @@ public class ArticleController {
             if(count%10!=0)
                 count+=10;
             model.addAttribute("count",count/10);
+            model.addAttribute("now",p+1);
         }
         return "/admin/articleList";
     }
