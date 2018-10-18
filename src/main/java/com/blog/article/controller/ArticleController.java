@@ -18,9 +18,6 @@ public class ArticleController {
     @RequestMapping(value="/{p}",method=RequestMethod.GET)
     public String page(@PathVariable int p,Model m){
         Article article = service.findOne(p);
-        if(article!=null){
-            System.out.println(article);
-        }
         m.addAttribute("obj",article);
         return "/home/page";
     }

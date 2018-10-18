@@ -107,6 +107,10 @@
                         <img src="/resource/img/script.jpg" class="rounded float-left article-img" alt="...">
                     </div>
                     <div id="article-page0" class="article-content" style="display:inline;">
+                        <h5 class="card-title">${list[0].title}</h5>
+                        <p class="card-text">${list[0].descriable}<</p>
+                        <a href='#' class="card-link">收藏</a>
+                        <a href="/article/${list[0].id}"  class="card-link">阅读全文</a>
                     </div>
                 </div>
                 <div class="article" style="width: 48rem;display:inline;">
@@ -114,6 +118,10 @@
                         <img src="/resource/img/script.jpg" class="rounded float-left article-img" alt="...">
                     </div>
                     <div id="article-page1" class="article-content" style="display:inline;">
+                        <h5 class="card-title">${list[1].title}</h5>
+                        <p class="card-text">${list[1].descriable}<</p>
+                        <a href='#' class="card-link">收藏</a>
+                        <a href="/article/${list[1].id}"  class="card-link">阅读全文</a>
                     </div>
                 </div>
                 <div class="article" style="width: 48rem;display:inline;">
@@ -121,6 +129,10 @@
                         <img src="/resource/img/script.jpg" class="rounded float-left article-img" alt="...">
                     </div>
                     <div id="article-page2" class="article-content" style="display:inline;">
+                        <h5 class="card-title">${list[2].title}</h5>
+                        <p class="card-text">${list[2].descriable}<</p>
+                        <a href='#' class="card-link">收藏</a>
+                        <a href="/article/${list[2].id}"  class="card-link">阅读全文</a>
                     </div>
                 </div>
                 <div class="article" style="width: 48rem;display:inline;">
@@ -128,45 +140,52 @@
                         <img src="/resource/img/script.jpg" class="rounded float-left article-img" alt="...">
                     </div>
                     <div id="article-page3" class="article-content" style="display:inline;">
+                        <h5 class="card-title">${list[3].title}</h5>
+                        <p class="card-text">${list[3].descriable}<</p>
+                        <a href='#' class="card-link">收藏</a>
+                        <a href="/article/${list[3].id}"  class="card-link">阅读全文</a>
                     </div>
                 </div>
                 <!--foot-->
-                <div class="float-right">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" onclick="get(0)">1</a></li>
-                            <li class="page-item"><a class="page-link" onclick="get(1)">2</a></li>
-                            <li class="page-item"><a class="page-link" onclick="get(2)">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                <div class="float-right btn-toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-light">上一页</button>
+                        <button type="button" class="btn btn-light active">1</button>
+                        <button type="button" class="btn btn-light">2</button>
+                        <button type="button" class="btn btn-light">3</button>
+                        <button type="button" class="btn btn-light">下一页</button>
+                    </div>
                 </div>
             </div>
             <div class="page-right">
                 <div class="card  bg-light mb-3" style="max-width: 20rem;">
                     <div class="card-header">最新资讯</div>
                     <div id="newArticle" class="card-body">
+                        <a href="/article/${newArticle[0].id}" class="text-muted">${newArticle[0].title}</a><br>
+                        <a href="/article/${newArticle[1].id}" class="text-muted">${newArticle[1].title}</a><br>
+                        <a href="/article/${newArticle[2].id}" class="text-muted">${newArticle[2].title}</a><br>
+                        <a href="/article/${newArticle[3].id}" class="text-muted">${newArticle[3].title}</a><br>
+                        <a href="/article/${newArticle[4].id}" class="text-muted">${newArticle[4].title}</a><br>
                     </div>
                 </div>
                 <div class="card  bg-light mb-3" style="max-width: 20rem;">
                     <div class="card-header">热门文章</div>
                     <div id="mostView" class="card-body">
+                        <a href="/article/${mostArticle[0].id}" class="text-muted">${mostArticle[0].title}</a><br>
+                        <a href="/article/${mostArticle[1].id}" class="text-muted">${mostArticle[1].title}</a><br>
+                        <a href="/article/${mostArticle[2].id}" class="text-muted">${mostArticle[2].title}</a><br>
+                        <a href="/article/${mostArticle[3].id}" class="text-muted">${mostArticle[3].title}</a><br>
+                        <a href="/article/${mostArticle[4].id}" class="text-muted">${mostArticle[4].title}</a><br>
                     </div>
                 </div>
                 <div class="card  bg-light mb-3" style="max-width: 20rem;">
                     <div class="card-header">最多评论</div>
                     <div id="mostComment"class="card-body">
+                        <a href="/article/${mostComment[0].id}" class="text-muted">${mostComment[0].title}</a><br>
+                        <a href="/article/${mostComment[1].id}" class="text-muted">${mostComment[1].title}</a><br>
+                        <a href="/article/${mostComment[2].id}" class="text-muted">${mostComment[2].title}</a><br>
+                        <a href="/article/${mostComment[3].id}" class="text-muted">${mostComment[3].title}</a><br>
+                        <a href="/article/${mostComment[4].id}" class="text-muted">${mostComment[4].title}</a><br>
                     </div>
                 </div>
                 <div class="card  bg-light mb-3" style="max-width: 20rem;">
@@ -211,51 +230,6 @@
           if('${user}'!=''){
               $('#welcome')[0].innerHTML="您好！${user}";
           }
-          //获取最新文章，最热文章模板函数
-          function getList(id,data){
-              var html='';
-              for(var i=0;i<5;i++){
-                  html+='<a href="/article/'+data[i].id+'"class="text-muted">'+data[i].title+'</a><br>';
-              }
-              $(id)[0].innerHTML=html;
-          }
-          function get(i) {
-              $.ajax({
-                  url: "http://localhost:8080/"+i,
-                  type: "get",
-                  success: function (data) {
-                      for (var i = 0; i < 4; i++) {
-                          $(('#article-page' + i))[0].innerHTML =
-                              "<h5 class='card-title'>" + data[i].title + "</h5>" +
-                              "<p class='card-text'>" + data[i].descriable + "</p>" +
-                              "<a href='#' class='card-link'>收藏</a>" +
-                              "<a href='/article/" + data[i].id + "'  class='card-link'>阅读全文</a>";
-                      }
-                  }
-              })
-          }
-         $.ajax({
-             url:"http://localhost:8080/article/newArticle",
-             type:"GET",
-             success:function(data){
-                 getList('#newArticle',data);
-             }
-         });
-          $.ajax({
-              url:"http://localhost:8080/article/mostView",
-              type:"GET",
-              success:function(data){
-                  getList('#mostView',data);
-              }
-          });
-          $.ajax({
-              url:"http://localhost:8080/article/mostComment",
-              type:"GET",
-              success:function(data){
-                  getList('#mostComment',data);
-              }
-          });
-          get(0);
       </script>
     </body>
 </html>
