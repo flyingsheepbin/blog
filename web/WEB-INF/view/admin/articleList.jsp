@@ -27,7 +27,7 @@
                 </tr>
                 </thead>
                 <tbody id="article">
-                    ${tbody}
+                ${tbody}
                 </tbody>
             </table>
             <div style="float:right;">

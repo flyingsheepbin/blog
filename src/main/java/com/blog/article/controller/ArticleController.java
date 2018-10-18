@@ -26,21 +26,20 @@ public class ArticleController {
         m.addAttribute("edit_page",service.findOne(p));
         return "/admin/edit";
     }
-    @RequestMapping("/newArticle")
-    @ResponseBody
-    public List<Article> newArticle(){
-        return service.newArticle();
-    }
-    @RequestMapping("/mostView")
-    @ResponseBody
-    public List<Article> mostView(){return service.mostView(); }
-    @RequestMapping("/mostComment")
-    @ResponseBody
-    public List<Article> mostComment(){return service.mostComment();}
+//    @RequestMapping("/newArticle")
+//    @ResponseBody
+//    public List<Article> newArticle(){
+//        return service.newArticle();
+//    }
+//    @RequestMapping("/mostView")
+//    @ResponseBody
+//    public List<Article> mostView(){return service.mostView(); }
+//    @RequestMapping("/mostComment")
+//    @ResponseBody
+//    public List<Article> mostComment(){return service.mostComment();}
     @RequestMapping("/view/{p}")
     public String view(@PathVariable int p,Model model){
-        if(p<0)
-            p=0;
+        if(p<0) p=0;
         StringBuilder html=new StringBuilder();
         List<Article> data = service.list(p*10);
         for(int i=0;i<data.size();i++){
@@ -51,13 +50,12 @@ public class ArticleController {
                     +article.getArticle_post_time()+"</td><td>"
                     +article.getArticle_view_count()
                     +"<td><button type='button' class='btn btn-primary btn-sm' onclick='edit("+article.getId()+")'>编辑</td></tr>");
-            model.addAttribute("tbody",html.toString());
-            int count = service.getArticleCount();
-            if(count%10!=0)
-                count+=10;
-            model.addAttribute("count",count/10);
-            model.addAttribute("now",p+1);
         }
+        model.addAttribute("tbody",html.toString());
+        int count = service.getArticleCount();
+        if(count%10!=0) count+=10;
+        model.addAttribute("count",count/10);
+        model.addAttribute("now",p+1);
         return "/admin/articleList";
     }
 
