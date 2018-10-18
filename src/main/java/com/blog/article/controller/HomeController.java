@@ -21,19 +21,16 @@ import java.util.regex.Pattern;
 public class HomeController {
     @Autowired
     private ArticleService service;
-    //@RequestMapping("/")
-    public String root(){
-        return "/home/index";
-    }
+//    @RequestMapping("/")
+//    public String root(){
+//        return "/home/index";
+//    }
     @RequestMapping("/{page}")
     @ResponseBody
-    public List<Article> page(@PathVariable int page){
+    public List<Article> page(@PathVariable int page,Model model){
         List<Article> list = service.getPage(page);
         Iterator<Article> it = list.iterator();
-        while(it.hasNext()){
-            System.out.println(it.next().getPage()==null);
-        }
-        System.out.println(list);
+        model.addAttribute("page",page+1);
         return list;
     }
     @RequestMapping("help")

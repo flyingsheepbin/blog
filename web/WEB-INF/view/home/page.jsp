@@ -22,16 +22,16 @@
                 <a class="nav-link" href="/">首页</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/link">链接</a>
+                <a id="link" class="nav-link" href="/link">链接</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/contact">联系</a>
+                <a id="contact" class="nav-link" href="/contact">联系</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about">关于</a>
+                <a id="about" class="nav-link" href="/about">关于</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/help">帮助</a>
+                <a id="help" class="nav-link" href="/help">帮助</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">登陆</a>
