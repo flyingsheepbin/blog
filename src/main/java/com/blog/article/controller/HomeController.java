@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 public class HomeController {
     @Autowired
     private ArticleService service;
-    @RequestMapping("/")
+    //@RequestMapping("/")
     public String root(){
         return "/home/index";
     }
