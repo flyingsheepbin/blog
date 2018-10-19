@@ -22,7 +22,7 @@
                 <a href="/" class="nav-link text-white">仪表盘</a>
             </button>
             <button type="button" class="btn  btn-secondary">
-                <a href="/admin/manager" class="nav-link text-white">文章</a>
+                <a href="/admin/manager" class="nav-link text-white ">文章</a>
             </button>
             <button type="button" class="btn  btn-secondary">
                 <a href="/" class="nav-link text-white">评论</a>
