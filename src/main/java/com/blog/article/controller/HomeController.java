@@ -27,13 +27,21 @@ public class HomeController {
         model.addAttribute("newArticle",service.newArticle());
         model.addAttribute("mostArticle",service.mostView());
         model.addAttribute("mostComment",service.mostComment());
+        model.addAttribute("pageNum",0);
         return "/home/index";
     }
     @RequestMapping("/{page}")
-    public List<Article> page(@PathVariable int page,Model model){
-        List<Article> list = service.getPage(page);
-        model.addAttribute("page",page+1);
-        return list;
+    public String page(@PathVariable int page,Model model){
+        int max = (int)Math.ceil(service.getArticleCount()/4.0);
+        if(page<=0)return "redirect:/";
+        else if(page>=max)
+            return "redirect:/"+(page-1);
+        model.addAttribute("list",service.getPage(page));
+        model.addAttribute("newArticle",service.newArticle());
+        model.addAttribute("mostArticle",service.mostView());
+        model.addAttribute("mostComment",service.mostComment());
+        model.addAttribute("pageNum",page);
+        return "/home/index";
     }
     @RequestMapping("help")
     public String help(Model model){

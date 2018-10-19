@@ -108,7 +108,7 @@
                     </div>
                     <div id="article-page0" class="article-content" style="display:inline;">
                         <h5 class="card-title">${list[0].title}</h5>
-                        <p class="card-text">${list[0].descriable}<</p>
+                        <p class="card-text">${list[0].descriable}</p>
                         <a href='#' class="card-link">收藏</a>
                         <a href="/article/${list[0].id}"  class="card-link">阅读全文</a>
                     </div>
@@ -119,7 +119,7 @@
                     </div>
                     <div id="article-page1" class="article-content" style="display:inline;">
                         <h5 class="card-title">${list[1].title}</h5>
-                        <p class="card-text">${list[1].descriable}<</p>
+                        <p class="card-text">${list[1].descriable}</p>
                         <a href='#' class="card-link">收藏</a>
                         <a href="/article/${list[1].id}"  class="card-link">阅读全文</a>
                     </div>
@@ -130,7 +130,7 @@
                     </div>
                     <div id="article-page2" class="article-content" style="display:inline;">
                         <h5 class="card-title">${list[2].title}</h5>
-                        <p class="card-text">${list[2].descriable}<</p>
+                        <p class="card-text">${list[2].descriable}</p>
                         <a href='#' class="card-link">收藏</a>
                         <a href="/article/${list[2].id}"  class="card-link">阅读全文</a>
                     </div>
@@ -141,7 +141,7 @@
                     </div>
                     <div id="article-page3" class="article-content" style="display:inline;">
                         <h5 class="card-title">${list[3].title}</h5>
-                        <p class="card-text">${list[3].descriable}<</p>
+                        <p class="card-text">${list[3].descriable}</p>
                         <a href='#' class="card-link">收藏</a>
                         <a href="/article/${list[3].id}"  class="card-link">阅读全文</a>
                     </div>
@@ -149,11 +149,11 @@
                 <!--foot-->
                 <div class="float-right btn-toolbar" aria-label="Toolbar with button groups">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-light">上一页</button>
-                        <button type="button" class="btn btn-light active">1</button>
-                        <button type="button" class="btn btn-light">2</button>
-                        <button type="button" class="btn btn-light">3</button>
-                        <button type="button" class="btn btn-light">下一页</button>
+                        <a href="/${pageNum-1}" class="btn btn-light">上一页</a>
+                        <a href="/0" id="link0" class="btn btn-light">1</a>
+                        <a href="/1" id="link1" class="btn btn-light">2</a>
+                        <a href="/2" id="link2" class="btn btn-light">3</a>
+                        <a href="/${pageNum+1}" class="btn btn-light">下一页</a>
                     </div>
                 </div>
             </div>
@@ -229,6 +229,20 @@
           }
           if('${user}'!=''){
               $('#welcome')[0].innerHTML="您好！${user}";
+          }
+          if('${pageNum}'<'3'){
+              $('#link'+${pageNum})[0].className+=" active";
+          }else{
+              var link0=$('#link0')[0];
+              var link1=$('#link1')[0];
+              var link2=$('#link2')[0];
+              link0.innerHTML=${pageNum-1};
+              link0.href='/${pageNum-2}';
+              link1.innerHTML=${pageNum};
+              link1.href='/${pageNum-1}';
+              link2.className+=" active";
+              link2.href="#";
+              link2.innerHTML=${pageNum+1};
           }
       </script>
     </body>
