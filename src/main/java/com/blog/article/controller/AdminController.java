@@ -20,6 +20,7 @@ public class AdminController {
     public String login(@ModelAttribute("user")User user, Model model){
         if(service.login(user)) {
             model.addAttribute("user",user.getUsername());
+            return "redirect:/admin/manager";
         }
         return "/home/index";
     }

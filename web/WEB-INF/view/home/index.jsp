@@ -227,9 +227,9 @@
           if('${register}'=='true'){
               alert("注册成功");
           }
-          if('${user}'!=''){
-              $('#welcome')[0].innerHTML="您好！${user}";
-          }
+          <%--if('${user}'!=''){--%>
+              <%--$('#welcome')[0].innerHTML="您好！${user}";--%>
+          <%--}--%>
           if('${pageNum}'<'3'){
               $('#link'+${pageNum})[0].className+=" active";
           }else{
