@@ -74,7 +74,7 @@
             <h1>${obj.title}</h1>
             ${obj.page}
         </div>
-        <div class="comment">
+        <div class="comment" id="comment">
             <label for="exampleFormControlTextarea1">评论</label>
             <form>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea><br>
@@ -87,6 +87,9 @@
     <script src="/resource/js/bootstrap.min.js"></script>
     <script>
         $('#${active}')[0].className += ' active';
+        if('${active}'!=''){
+            $('#comment')[0].hidden=true;
+        }
     </script>
 </body>
 </html>
