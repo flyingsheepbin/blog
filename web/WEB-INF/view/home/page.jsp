@@ -34,7 +34,8 @@
                 <a id="help" class="nav-link" href="/help">帮助</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">登陆</a>
+                <a id="login" class="nav-link" data-toggle="modal" data-target="#exampleModal">登陆</a>
+                <a id="manage" class="nav-link" href="/admin/manager" hidden>管理</a>
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -89,6 +90,10 @@
         $('#${active}')[0].className += ' active';
         if('${active}'!=''){
             $('#comment')[0].hidden=true;
+        }
+        if('${user}'!=''){
+            $('#login')[0].hidden=true;
+            $('#manage')[0].hidden=false;
         }
     </script>
 </body>

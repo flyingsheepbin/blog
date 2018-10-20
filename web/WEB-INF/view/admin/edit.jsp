@@ -19,9 +19,7 @@
     <h2 id="title">${edit_page.title}</h2>
     <id hidden>${edit_page.id}</id>
     <div contentEditable id="article" class="card edit_page">
-        <div>
-            ${edit_page.page}
-        </div>
+        ${edit_page.page}
     </div>
     <div class="float-right">
         <button type="button" class="btn btn-secondary btn-sm" onclick="history.go(-1);">取消</button>
@@ -46,7 +44,8 @@
                 type:"POST",
                 data:json,
                 success:function(data){
-                    console.log(data);
+                    if(data==200)
+                        alert("修改成功")
                 }
             })
         }

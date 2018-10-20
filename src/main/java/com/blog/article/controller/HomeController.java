@@ -88,7 +88,7 @@ public class HomeController {
     }
     @RequestMapping("update")
     @ResponseBody
-    public void update(Model model,HttpServletRequest request,String title,String page,int id){
+    public int update(Model model,HttpServletRequest request,String title,String page,int id){
         Cookie[] cookies = request.getCookies();
         String username,password;
         username = password = null;
@@ -105,7 +105,8 @@ public class HomeController {
             if(userService.login(user)){
                 Article article = new Article(id,title,page);
                 if(service.update(article)){
-                    model.addAttribute("code",200);
+                    System.out.println("success");
+                    return 200;
                 }else {
                     model.addAttribute("code", 500);
                 }
@@ -115,5 +116,6 @@ public class HomeController {
         }else{
             model.addAttribute("code",0);
         }
+        return 0;
     }
 }
