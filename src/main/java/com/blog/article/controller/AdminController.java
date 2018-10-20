@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -17,8 +21,16 @@ public class AdminController {
     @Autowired
     private UserService service;
     @RequestMapping(value="/login",method= RequestMethod.POST)
-    public String login(@ModelAttribute("user")User user, Model model){
+    public String login(@ModelAttribute("user")User user, Model model, HttpServletResponse response){
         if(service.login(user)) {
+            Cookie cookie1 = new Cookie("username",user.getUsername());
+            Cookie cookie2 = new Cookie("password",user.getPassword());
+            cookie1.setMaxAge(86400);
+            cookie2.setMaxAge(86400);
+            cookie1.setPath("/");
+            cookie2.setPath("/");
+            response.addCookie(cookie1);
+            response.addCookie(cookie2);
             return "redirect:/admin/manager";
         }
         return "/home/index";
@@ -37,7 +49,24 @@ public class AdminController {
         return "/home/register";
     }
     @RequestMapping("/manager")
-    public String manager(){
-        return "/admin/index";
+    public String manager(HttpServletRequest request){
+        Cookie[] cookies = request.getCookies();
+        String username,password;
+        username = password = null;
+        for(Cookie c:cookies){
+            if(c.getName().equals("username")){
+                username = c.getValue();
+            }
+            else if(c.getName().equals("password")){
+                password = c.getValue();
+            }
+        }
+        if(password!=null&&username!=null){
+            User user = new User(username,password);
+            if(service.login(user)){
+                return "/admin/index";
+            }
+        }
+        return "redirect:/";
     }
 }

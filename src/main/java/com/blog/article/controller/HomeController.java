@@ -1,7 +1,9 @@
 package com.blog.article.controller;
 
 import com.blog.article.entity.Article;
+import com.blog.article.entity.User;
 import com.blog.article.service.ArticleService;
+import com.blog.article.service.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -21,13 +25,32 @@ import java.util.regex.Pattern;
 public class HomeController {
     @Autowired
     private ArticleService service;
+    @Autowired
+    private UserService userService;
     @RequestMapping("/")
-    public String root(Model model){
+    public String root(Model model, HttpServletRequest request){
         model.addAttribute("list",service.getPage(0));
         model.addAttribute("newArticle",service.newArticle());
         model.addAttribute("mostArticle",service.mostView());
         model.addAttribute("mostComment",service.mostComment());
         model.addAttribute("pageNum",0);
+        Cookie[] cookies = request.getCookies();
+        String username,password;
+        username = password = null;
+        for(Cookie c:cookies){
+            if(c.getName().equals("username")){
+                username = c.getValue();
+            }
+            else if(c.getName().equals("password")){
+                password = c.getValue();
+            }
+        }
+        if(password!=null&&username!=null){
+            User user = new User(username,password);
+            if(userService.login(user)){
+                model.addAttribute("user",user);
+            }
+        }
         return "/home/index";
     }
     @RequestMapping("/{page}")

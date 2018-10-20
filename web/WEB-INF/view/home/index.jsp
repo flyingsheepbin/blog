@@ -14,7 +14,7 @@
         <!--header-->
         <div class="head">
             <div id="welcome">
-                欢迎光临！
+                欢迎光临！${user.username}
             </div>
             <a href="/" style="float:left;" class="text-dark"><h3>会飞的羊博客</h3></a>
             <ul class="nav justify-content-end nav-pills ">
@@ -34,7 +34,8 @@
                     <a class="nav-link" href="/help">帮助</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">登陆</a>
+                    <a id="login" class="nav-link" data-toggle="modal" data-target="#exampleModal">登陆</a>
+                    <a id="manage" class="nav-link" href="/admin/manager" hidden>管理</a>
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -226,6 +227,10 @@
       <script>
           if('${register}'=='true'){
               alert("注册成功");
+          }
+          if('${user}'!=''){
+              $('#login')[0].hidden=true;
+              $('#manage')[0].hidden=false;
           }
           <%--if('${user}'!=''){--%>
               <%--$('#welcome')[0].innerHTML="您好！${user}";--%>
