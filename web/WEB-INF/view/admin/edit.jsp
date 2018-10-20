@@ -13,21 +13,42 @@
     <link href="/resource/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div contentEditable class="card edit_page">
-        <div>
-            <span>编辑文章</span><button type="button" class="btn btn-primary btn-sm">写文章</button>
-        </div>
-        <input type="text" value="${edit_page.title}">
-        <span hidden>${edit_page.id}</span>
+    <div>
+        <span>编辑文章</span><button type="button" class="btn btn-primary btn-sm">写文章</button>
+    </div>
+    <h2 id="title">${edit_page.title}</h2>
+    <id hidden>${edit_page.id}</id>
+    <div contentEditable id="article" class="card edit_page">
         <div>
             ${edit_page.page}
         </div>
     </div>
     <div class="float-right">
         <button type="button" class="btn btn-secondary btn-sm" onclick="history.go(-1);">取消</button>
-        <button type="button" class="btn btn-primary btn-sm"><a href="#" class="text-white">更新</a></button>
+        <button type="button" class="btn btn-primary btn-sm"><a href="#" class="text-white" onclick="update()">更新</a></button>
     </div>
 </body>
     <script src="/resource/js/jquery-3.3.1.min.js"></script>
     <script src="/resource/js/bootstrap.min.js"></script>
+    <script>
+        function update(){
+            var html = $('#article')[0].innerHTML;
+            var title = $('#title')[0].innerHTML;
+            var id = $('id')[0].innerHTML;
+            console.log(id);
+            var json = {
+                "title":title,
+                "page":html,
+                "id":id
+            }
+            $.ajax({
+                url:"http://localhost:8080/update",
+                type:"POST",
+                data:json,
+                success:function(data){
+                    console.log(data);
+                }
+            })
+        }
+    </script>
 </html>

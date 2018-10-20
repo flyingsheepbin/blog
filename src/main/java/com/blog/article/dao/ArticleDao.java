@@ -13,4 +13,5 @@ public interface ArticleDao {
     List<Article> mostComment();
     List<Article> list(int p);
     int getArticleCount();
+    boolean update(Article article);
 }

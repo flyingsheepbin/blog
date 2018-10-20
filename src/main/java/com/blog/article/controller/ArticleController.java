@@ -19,6 +19,7 @@ public class ArticleController {
     public String page(@PathVariable int p,Model m){
         Article article = service.findOne(p);
         m.addAttribute("obj",article);
+        m.addAttribute("active","page");
         return "/home/page";
     }
     @RequestMapping(value="/edit/{p}",method=RequestMethod.GET)

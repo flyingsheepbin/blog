@@ -86,4 +86,34 @@ public class HomeController {
         model.addAttribute("active","about");
         return "/home/page";
     }
+    @RequestMapping("update")
+    @ResponseBody
+    public void update(Model model,HttpServletRequest request,String title,String page,int id){
+        Cookie[] cookies = request.getCookies();
+        String username,password;
+        username = password = null;
+        for(Cookie c:cookies){
+            if(c.getName().equals("username")){
+                username = c.getValue();
+            }
+            else if(c.getName().equals("password")){
+                password = c.getValue();
+            }
+        }
+        if(password!=null&&username!=null){
+            User user = new User(username,password);
+            if(userService.login(user)){
+                Article article = new Article(id,title,page);
+                if(service.update(article)){
+                    model.addAttribute("code",200);
+                }else {
+                    model.addAttribute("code", 500);
+                }
+            }else {
+                model.addAttribute("code", 0);
+            }
+        }else{
+            model.addAttribute("code",0);
+        }
+    }
 }

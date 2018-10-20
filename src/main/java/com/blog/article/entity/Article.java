@@ -10,7 +10,12 @@ public class Article {
     private Date article_post_time;
     private int article_view_count;
     private int article_comment_count;
-
+    public Article(int id,String title,String page){
+        this.id= id;
+        this.title = title;
+        this.page = page;
+    }
+    public Article(){}
     public int getArticle_comment_count() {
         return article_comment_count;
     }

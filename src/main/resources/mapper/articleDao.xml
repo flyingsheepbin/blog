@@ -24,4 +24,7 @@
     <select id="getArticleCount" resultType="int">
         select count(id) from article;
     </select>
+    <update id="update" parameterType="com.blog.article.entity.Article">
+        update article set title=#{title},page=#{page} where id=#{id};
+    </update>
 </mapper>
