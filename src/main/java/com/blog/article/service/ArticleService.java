@@ -24,7 +24,7 @@ public class ArticleService {
     public int getArticleCount(){return dao.getArticleCount();}
     public boolean update(Article article){return dao.update(article);}
     public boolean insert(Article article){
-        article.setDescriable(article.getPage().substring(0,200));
+        article.setDescriable(article.getPage().substring(0,100));
         return dao.insert(article);
     }
 }
