@@ -14,4 +14,5 @@ public interface ArticleDao {
     List<Article> list(int p);
     int getArticleCount();
     boolean update(Article article);
+    boolean insert(Article article);
 }

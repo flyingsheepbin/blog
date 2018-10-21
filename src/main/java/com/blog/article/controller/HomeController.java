@@ -37,6 +37,7 @@ public class HomeController {
         Cookie[] cookies = request.getCookies();
         String username,password;
         username = password = null;
+        if(cookies!=null)
         for(Cookie c:cookies){
             if(c.getName().equals("username")){
                 username = c.getValue();
@@ -44,6 +45,9 @@ public class HomeController {
             else if(c.getName().equals("password")){
                 password = c.getValue();
             }
+        }
+        else{
+            System.out.println("cookie is null");
         }
         if(password!=null&&username!=null){
             User user = new User(username,password);

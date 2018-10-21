@@ -14,7 +14,7 @@
 </head>
 <body>
     <div>
-        <span>编辑文章</span><button type="button" class="btn btn-primary btn-sm">写文章</button>
+        <span>编辑文章</span><a href="/article/new" class="btn btn-primary btn-sm">写文章</a>
     </div>
     <h2 id="title">${edit_page.title}</h2>
     <id hidden>${edit_page.id}</id>

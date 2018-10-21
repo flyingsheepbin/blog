@@ -2,11 +2,15 @@ package com.blog.article.controller;
 
 import com.blog.article.entity.Article;
 import com.blog.article.service.ArticleService;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 
@@ -26,6 +30,20 @@ public class ArticleController {
     public String edit(@PathVariable int p,Model m){
         m.addAttribute("edit_page",service.findOne(p));
         return "/admin/edit";
+    }
+    @RequestMapping("/new")
+    public String addArticle(){
+        return "/admin/write";
+    }
+    @RequestMapping("/write")
+    @ResponseBody
+    public int write(String title, String page, String date){
+        Article article = new Article(title,page,Date.valueOf(date.replace('/','-')));
+        //checkAdmin
+        if(service.insert(article)){
+            return 200;
+        }
+        return 0;
     }
 //    @RequestMapping("/newArticle")
 //    @ResponseBody

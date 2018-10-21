@@ -15,6 +15,11 @@ public class Article {
         this.title = title;
         this.page = page;
     }
+    public Article(String title,String page,Date date){
+        this.title=title;
+        this.page=page;
+        this.article_post_time = date;
+    }
     public Article(){}
     public int getArticle_comment_count() {
         return article_comment_count;

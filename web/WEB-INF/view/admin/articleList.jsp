@@ -16,7 +16,7 @@
     <div class="card" style="width: 91%;height:100%">
         <div class="card-body">
             <span>文章</span>&nbsp;
-            <button class="btn btn-sm btn-primary"><a href="" class="nav-link text-white">写文章</a></button>
+            <button class="btn btn-sm btn-primary"><a href="/article/new" class="nav-link text-white">写文章</a></button>
             <div>
                 <a href="">全部</a> | <a href="">已发布</a> | <a href="">草稿</a> | <a href="">私密</a>
             </div>
