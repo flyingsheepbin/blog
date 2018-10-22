@@ -15,4 +15,5 @@ public interface ArticleDao {
     int getArticleCount();
     boolean update(Article article);
     boolean insert(Article article);
+    boolean delete(int id);
 }

@@ -46,5 +46,19 @@
         function edit(id){
             window.location = "/article/edit/"+id;
         }
+        function deleteIt(id){
+            $.ajax({
+                url:"http://localhost:8080/article/delete/"+id,
+                type:"GET",
+                success:function(data){
+                    if(data==200){
+                        alert("删除成功！");
+                        window.location = "/article/view/0";
+                    }else{
+                        alert("删除失败");
+                    }
+                }
+            })
+        }
     </script>
 </html>

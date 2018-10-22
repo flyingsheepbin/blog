@@ -30,4 +30,7 @@
     <insert id="insert" parameterType="com.blog.article.entity.Article">
         insert article(title,page,article_post_time,descriable) values(#{title},#{page},#{article_post_time},#{descriable});
     </insert>
+    <delete id="delete" parameterType="int">
+        delete from article where id=#{id};
+    </delete>
 </mapper>

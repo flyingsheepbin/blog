@@ -38,7 +38,7 @@
                 "title":title,
                 "page":html,
                 "id":id
-            }
+            };
             $.ajax({
                 url:"http://localhost:8080/update",
                 type:"POST",

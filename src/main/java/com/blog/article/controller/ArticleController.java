@@ -45,6 +45,16 @@ public class ArticleController {
         }
         return 0;
     }
+    @RequestMapping("/delete/{id}")
+    @ResponseBody
+    public int delete(@PathVariable int id){
+        //先判断id是否存在，不存在就不删除，并且返回一个不存在的代码0
+
+        if(service.delete(id)){
+            return 200;
+        }
+        return 0;
+    }
 //    @RequestMapping("/newArticle")
 //    @ResponseBody
 //    public List<Article> newArticle(){
@@ -68,7 +78,9 @@ public class ArticleController {
                     +article.getTitle()+"</td><td>"
                     +article.getArticle_post_time()+"</td><td>"
                     +article.getArticle_view_count()
-                    +"<td><button type='button' class='btn btn-primary btn-sm' onclick='edit("+article.getId()+")'>编辑</td></tr>");
+                    +"<td><button type='button' class='btn btn-primary btn-sm' onclick='edit("+article.getId()+")'>编辑" +
+                    "</button>&nbsp;<button type='button' class='btn btn-primary btn-sm' onclick='deleteIt("+article.getId()
+                    +")'>删除</button></td></tr>");
         }
         model.addAttribute("tbody",html.toString());
         int count = service.getArticleCount();

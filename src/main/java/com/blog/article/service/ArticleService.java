@@ -27,4 +27,5 @@ public class ArticleService {
         article.setDescriable(article.getPage().substring(0,100));
         return dao.insert(article);
     }
+    public boolean delete(int id){return dao.delete(id);}
 }
