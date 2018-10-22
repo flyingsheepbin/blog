@@ -35,15 +35,13 @@ public class HomeController {
         model.addAttribute("mostComment",service.mostComment());
         model.addAttribute("pageNum",0);
         User user = checkUser(request);
-        if(user!=null){
-            if(userService.login(user)){
-                model.addAttribute("user",user);
-            }
+        if(user!=null&&userService.login(user)){
+            model.addAttribute("user",user);
         }
         return "/home/index";
     }
     @RequestMapping("/{page}")
-    public String page(@PathVariable int page,Model model){
+    public String page(@PathVariable int page,Model model,HttpServletRequest request){
         int max = (int)Math.ceil(service.getArticleCount()/4.0);
         if(page<=0)return "redirect:/";
         else if(page>=max)
@@ -53,6 +51,10 @@ public class HomeController {
         model.addAttribute("mostArticle",service.mostView());
         model.addAttribute("mostComment",service.mostComment());
         model.addAttribute("pageNum",page);
+        User user = checkUser(request);
+        if(user!=null&&userService.login(user)){
+            model.addAttribute("user",user);
+        }
         return "/home/index";
     }
     @RequestMapping("help")
@@ -79,20 +81,12 @@ public class HomeController {
     @ResponseBody
     public int update(Model model,HttpServletRequest request,String title,String page,int id){
         User user = checkUser(request);
-        if(user!=null){
-            if(userService.login(user)){
-                Article article = new Article(id,title,page);
-                if(service.update(article)){
-                    System.out.println("success");
-                    return 200;
-                }else {
-                    model.addAttribute("code", 500);
-                }
-            }else {
-                model.addAttribute("code", 0);
-            }
-        }else{
-            model.addAttribute("code",0);
+        Article article = new Article(id,title,page);
+        if(user!=null&&userService.login(user)&&service.update(article)){
+            System.out.println("success");
+            return 200;
+        }else {
+            model.addAttribute("code", 0);
         }
         return 0;
     }
