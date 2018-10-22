@@ -50,19 +50,8 @@ public class AdminController {
     }
     @RequestMapping("/manager")
     public String manager(HttpServletRequest request){
-        Cookie[] cookies = request.getCookies();
-        String username,password;
-        username = password = null;
-        for(Cookie c:cookies){
-            if(c.getName().equals("username")){
-                username = c.getValue();
-            }
-            else if(c.getName().equals("password")){
-                password = c.getValue();
-            }
-        }
-        if(password!=null&&username!=null){
-            User user = new User(username,password);
+        User user = HomeController.checkUser(request);
+        if(user!=null){
             if(service.login(user)){
                 return "/admin/index";
             }

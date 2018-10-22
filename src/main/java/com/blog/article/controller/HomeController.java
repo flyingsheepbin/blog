@@ -34,23 +34,8 @@ public class HomeController {
         model.addAttribute("mostArticle",service.mostView());
         model.addAttribute("mostComment",service.mostComment());
         model.addAttribute("pageNum",0);
-        Cookie[] cookies = request.getCookies();
-        String username,password;
-        username = password = null;
-        if(cookies!=null)
-        for(Cookie c:cookies){
-            if(c.getName().equals("username")){
-                username = c.getValue();
-            }
-            else if(c.getName().equals("password")){
-                password = c.getValue();
-            }
-        }
-        else{
-            System.out.println("cookie is null");
-        }
-        if(password!=null&&username!=null){
-            User user = new User(username,password);
+        User user = checkUser(request);
+        if(user!=null){
             if(userService.login(user)){
                 model.addAttribute("user",user);
             }
@@ -93,19 +78,8 @@ public class HomeController {
     @RequestMapping("update")
     @ResponseBody
     public int update(Model model,HttpServletRequest request,String title,String page,int id){
-        Cookie[] cookies = request.getCookies();
-        String username,password;
-        username = password = null;
-        for(Cookie c:cookies){
-            if(c.getName().equals("username")){
-                username = c.getValue();
-            }
-            else if(c.getName().equals("password")){
-                password = c.getValue();
-            }
-        }
-        if(password!=null&&username!=null){
-            User user = new User(username,password);
+        User user = checkUser(request);
+        if(user!=null){
             if(userService.login(user)){
                 Article article = new Article(id,title,page);
                 if(service.update(article)){
@@ -121,5 +95,23 @@ public class HomeController {
             model.addAttribute("code",0);
         }
         return 0;
+    }
+    public static User checkUser(HttpServletRequest request){
+        Cookie[] cookies = request.getCookies();
+        String username,password;
+        username = password = null;
+        if(cookies!=null){
+            for(Cookie c:cookies){
+                if(c.getName().equals("username")){
+                    username = c.getValue();
+                }
+                else if(c.getName().equals("password")){
+                    password = c.getValue();
+                }
+            }
+        }
+        if(password!=null&&username!=null)
+            return new User(username,password);
+        return null;
     }
 }
