@@ -826,85 +826,119 @@
     </collation>
     <table id="208" parent="2" name="article"/>
     <table id="209" parent="2" name="article_user"/>
-    <column id="210" parent="208" name="id">
+    <table id="210" parent="2" name="comment"/>
+    <column id="211" parent="208" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="211" parent="208" name="title">
+    <column id="212" parent="208" name="title">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="212" parent="208" name="descriable">
+    <column id="213" parent="208" name="descriable">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="213" parent="208" name="page">
+    <column id="214" parent="208" name="page">
       <Position>4</Position>
       <DataType>varchar(10000)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="214" parent="208" name="article_post_time">
+    <column id="215" parent="208" name="article_post_time">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="215" parent="208" name="article_view_count">
+    <column id="216" parent="208" name="article_view_count">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="216" parent="208" name="article_comment_count">
+    <column id="217" parent="208" name="article_comment_count">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="217" parent="208" name="PRIMARY">
+    <key id="218" parent="208" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="218" parent="209" name="id">
+    <column id="219" parent="209" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="219" parent="209" name="username">
+    <column id="220" parent="209" name="username">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="220" parent="209" name="password">
+    <column id="221" parent="209" name="password">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="221" parent="209" name="email">
+    <column id="222" parent="209" name="email">
       <Position>4</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="222" parent="209" name="username">
+    <index id="223" parent="209" name="username">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="223" parent="209" name="PRIMARY">
+    <key id="224" parent="209" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="224" parent="209" name="username">
+    <key id="225" parent="209" name="username">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>username</UnderlyingIndexName>
+    </key>
+    <column id="226" parent="210" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="227" parent="210" name="username">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="228" parent="210" name="email">
+      <Position>3</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="229" parent="210" name="comment_content">
+      <Position>4</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="230" parent="210" name="article_id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="231" parent="210" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
     </key>
   </database-model>
 </dataSource>
