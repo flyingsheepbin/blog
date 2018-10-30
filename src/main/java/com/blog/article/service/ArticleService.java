@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author flyingsheep
+ */
 @Service
 public class ArticleService {
     @Autowired

@@ -5,6 +5,9 @@ import com.blog.article.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author flyingsheep
+ */
 @Service
 public class UserService {
     @Autowired

@@ -2,6 +2,9 @@ package com.blog.article.entity;
 
 import java.sql.Date;
 
+/**
+ * @author flyingsheep
+ */
 public class Article {
     private int id;
     private String title;

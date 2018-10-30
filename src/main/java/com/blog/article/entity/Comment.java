@@ -1,5 +1,8 @@
 package com.blog.article.entity;
 
+/**
+ * @author flyingsheep
+ */
 public class Comment {
     private int id;
     private String username;

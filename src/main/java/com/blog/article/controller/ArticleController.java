@@ -16,6 +16,9 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 
+/**
+ * @author flyingsheep
+ */
 @Controller
 @RequestMapping("/article")
 public class ArticleController {

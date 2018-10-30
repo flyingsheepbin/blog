@@ -1,5 +1,8 @@
 package com.blog.article.entity;
 
+/**
+ * @author flyingsheep
+ */
 public class User {
     private String username;
     private String password;

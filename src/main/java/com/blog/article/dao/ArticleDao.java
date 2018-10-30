@@ -5,6 +5,9 @@ import com.blog.article.entity.Article;
 import java.util.List;
 
 
+/**
+ * @author flyingsheep
+ */
 public interface ArticleDao {
     List<Article> getPage(int p);
     Article findOne(int id);

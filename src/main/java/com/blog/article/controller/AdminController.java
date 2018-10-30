@@ -14,6 +14,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * @author flyingsheep
+ */
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -58,4 +61,5 @@ public class AdminController {
         }
         return "redirect:/";
     }
+
 }
