@@ -33,7 +33,7 @@
               "date":date.toLocaleDateString()
           };
           $.ajax({
-              url:"http://localhost:8080/article/write",
+              url:"http://localhost:8080/article/write/",
               type:"POST",
               data:json,
               success:function(data){

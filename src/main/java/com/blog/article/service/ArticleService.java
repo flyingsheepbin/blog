@@ -24,7 +24,12 @@ public class ArticleService {
     public int getArticleCount(){return dao.getArticleCount();}
     public boolean update(Article article){return dao.update(article);}
     public boolean insert(Article article){
-        article.setDescriable(article.getPage().substring(0,100));
+        String page = article.getPage();
+        if(page.length()>100) {
+            article.setDescriable(article.getPage().substring(0, 100));
+        }else{
+            article.setDescriable(page);
+        }
         return dao.insert(article);
     }
     public boolean delete(int id){return dao.delete(id);}

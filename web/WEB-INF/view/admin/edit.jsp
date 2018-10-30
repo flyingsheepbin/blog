@@ -40,7 +40,7 @@
                 "id":id
             };
             $.ajax({
-                url:"http://localhost:8080/update",
+                url:"http://localhost:8080/article/update/",
                 type:"POST",
                 data:json,
                 success:function(data){
