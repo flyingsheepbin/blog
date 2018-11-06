@@ -1,24 +1,15 @@
 package com.blog.article.controller;
 
-import com.blog.article.entity.Article;
 import com.blog.article.entity.User;
 import com.blog.article.service.ArticleService;
 import com.blog.article.service.UserService;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @author flyingsheep
@@ -26,10 +17,15 @@ import java.util.regex.Pattern;
 @Controller
 @RequestMapping("/")
 public class HomeController {
+    private final ArticleService service;
+    private final UserService userService;
+    public static final String REDIRECT = "redirect:/";
     @Autowired
-    private ArticleService service;
-    @Autowired
-    private UserService userService;
+    public HomeController(ArticleService service, UserService userService) {
+        this.service = service;
+        this.userService = userService;
+    }
+
     @RequestMapping("/")
     public String root(Model model, HttpServletRequest request){
         model.addAttribute("list",service.getPage(0));
@@ -46,9 +42,10 @@ public class HomeController {
     @RequestMapping("/{page}")
     public String page(@PathVariable int page,Model model,HttpServletRequest request){
         int max = (int)Math.ceil(service.getArticleCount()/4.0);
-        if(page<=0)return "redirect:/";
-        else if(page>=max)
-            return "redirect:/"+(page-1);
+        if(page<=0){return REDIRECT;}
+        else if(page>=max) {
+            return REDIRECT + (page - 1);
+        }
         model.addAttribute("list",service.getPage(page));
         model.addAttribute("newArticle",service.newArticle());
         model.addAttribute("mostArticle",service.mostView());
@@ -86,10 +83,10 @@ public class HomeController {
         username = password = null;
         if(cookies!=null){
             for(Cookie c:cookies){
-                if(c.getName().equals("username")){
+                if("username".equals(c.getName())){
                     username = c.getValue();
                 }
-                else if(c.getName().equals("password")){
+                else if("password".equals(c.getName())){
                     password = c.getValue();
                 }
             }

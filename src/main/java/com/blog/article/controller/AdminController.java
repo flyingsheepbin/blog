@@ -8,8 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,11 +18,13 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-
-    @Autowired
     private UserService service;
+    @Autowired
+    public AdminController(UserService service){
+        this.service = service;
+    }
     @RequestMapping(value="/login",method= RequestMethod.POST)
-    public String login(@ModelAttribute("user")User user, Model model, HttpServletResponse response){
+    public String login(@ModelAttribute("user")User user,HttpServletResponse response){
         if(service.login(user)) {
             Cookie cookie1 = new Cookie("username",user.getUsername());
             Cookie cookie2 = new Cookie("password",user.getPassword());

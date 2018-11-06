@@ -1,18 +1,12 @@
 package com.blog.article.controller;
 
 import com.blog.article.entity.Article;
-import com.blog.article.entity.User;
 import com.blog.article.service.ArticleService;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 
@@ -22,8 +16,23 @@ import java.util.List;
 @Controller
 @RequestMapping("/article")
 public class ArticleController {
-    @Autowired
     private ArticleService service;
+    private static String TBODY;
+    private static String NOW;
+    private static String COUNT;
+    private static int PAGE_LINE;
+
+    static {
+        TBODY = "tbody";
+        NOW = "now";
+        COUNT = "count";
+        PAGE_LINE = 10;
+    }
+
+    @Autowired
+    public ArticleController(ArticleService service){
+        this.service = service;
+    }
     @RequestMapping(value="/{p}",method=RequestMethod.GET)
     public String page(@PathVariable int p,Model m){
         Article article = service.findOne(p);
@@ -60,7 +69,7 @@ public class ArticleController {
     }
     @RequestMapping("/update/")
     @ResponseBody
-    public int update(Model model, HttpServletRequest request, String title, String page, int id){
+    public int update(Model model, String title, String page, int id){
         Article article = new Article(id,title,page);
         if(service.update(article)){
             System.out.println("success");
@@ -70,38 +79,19 @@ public class ArticleController {
         }
         return 0;
     }
-//    @RequestMapping("/newArticle")
-//    @ResponseBody
-//    public List<Article> newArticle(){
-//        return service.newArticle();
-//    }
-//    @RequestMapping("/mostView")
-//    @ResponseBody
-//    public List<Article> mostView(){return service.mostView(); }
-//    @RequestMapping("/mostComment")
-//    @ResponseBody
-//    public List<Article> mostComment(){return service.mostComment();}
     @RequestMapping("/view/{p}")
     public String view(@PathVariable int p,Model model){
         if(p<0){ p=0;}
         StringBuilder html=new StringBuilder();
         List<Article> data = service.list(p*10);
-        for(int i=0;i<data.size();i++){
-            Article article = data.get(i);
-            html.append("<tr><td>"
-                    +article.getId()+"</td><td>"
-                    +article.getTitle()+"</td><td>"
-                    +article.getArticle_post_time()+"</td><td>"
-                    +article.getArticle_view_count()
-                    +"<td><button type='button' class='btn btn-primary btn-sm' onclick='edit("+article.getId()+")'>编辑" +
-                    "</button>&nbsp;<button type='button' class='btn btn-primary btn-sm' onclick='deleteIt("+article.getId()
-                    +")'>删除</button></td></tr>");
+        for (Article article : data) {
+            html.append("<tr><td>").append(article.getId()).append("</td><td>").append(article.getTitle()).append("</td><td>").append(article.getArticle_post_time()).append("</td><td>").append(article.getArticle_view_count()).append("<td><button type='button' class='btn btn-primary btn-sm' onclick='edit(").append(article.getId()).append(")'>编辑").append("</button>&nbsp;<button type='button' class='btn btn-primary btn-sm' onclick='deleteIt(").append(article.getId()).append(")'>删除</button></td></tr>");
         }
-        model.addAttribute("tbody",html.toString());
+        model.addAttribute(TBODY,html.toString());
         int count = service.getArticleCount();
-        if(count%10!=0){ count+=10;}
-        model.addAttribute("count",count/10);
-        model.addAttribute("now",p+1);
+        if(count%PAGE_LINE!=0){ count+=PAGE_LINE;}
+        model.addAttribute(COUNT,count/PAGE_LINE);
+        model.addAttribute(NOW,p+1);
         return "/admin/articleList";
     }
 

@@ -4,6 +4,7 @@ import com.blog.article.controller.HomeController;
 import com.blog.article.entity.User;
 import com.blog.article.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import sun.awt.geom.AreaOp;
@@ -35,5 +36,8 @@ public class LoginInterceptor implements HandlerInterceptor {
     }
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object object,ModelAndView mav){
+    }
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception{
     }
 }

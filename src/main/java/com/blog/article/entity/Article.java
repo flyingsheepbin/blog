@@ -55,7 +55,7 @@ public class Article {
     public void setDescriable(String descriable) {
         this.descriable = descriable;
     }
-
+    @Override
     public String toString(){
         return id+":"+descriable;
     }
