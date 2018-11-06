@@ -111,7 +111,8 @@
                         <h5 class="card-title">${list[0].title}</h5>
                         <p class="card-text">${list[0].descriable}</p>
                         <a href='#' class="card-link">收藏</a>
-                        <a href="/article/${list[0].id}"  class="card-link">阅读全文</a>
+                        <span>浏览次数${list[0].article_view_count}</span>
+                        <a href="/article/${list[0].id}"  class="card-link float-right">阅读全文</a>
                     </div>
                 </div>
                 <div class="article" style="width: 48rem;display:inline;">
@@ -122,7 +123,8 @@
                         <h5 class="card-title">${list[1].title}</h5>
                         <p class="card-text">${list[1].descriable}</p>
                         <a href='#' class="card-link">收藏</a>
-                        <a href="/article/${list[1].id}"  class="card-link">阅读全文</a>
+                        <span>浏览次数${list[1].article_view_count}</span>
+                        <a href="/article/${list[1].id}"  class="card-link float-right">阅读全文</a>
                     </div>
                 </div>
                 <div class="article" style="width: 48rem;display:inline;">
@@ -133,7 +135,8 @@
                         <h5 class="card-title">${list[2].title}</h5>
                         <p class="card-text">${list[2].descriable}</p>
                         <a href='#' class="card-link">收藏</a>
-                        <a href="/article/${list[2].id}"  class="card-link">阅读全文</a>
+                        <span>浏览次数${list[2].article_view_count}</span>
+                        <a href="/article/${list[2].id}"  class="card-link float-right">阅读全文</a>
                     </div>
                 </div>
                 <div class="article" style="width: 48rem;display:inline;">
@@ -144,7 +147,8 @@
                         <h5 class="card-title">${list[3].title}</h5>
                         <p class="card-text">${list[3].descriable}</p>
                         <a href='#' class="card-link">收藏</a>
-                        <a href="/article/${list[3].id}"  class="card-link">阅读全文</a>
+                        <span>浏览次数${list[3].article_view_count}</span>
+                        <a href="/article/${list[3].id}"  class="card-link float-right">阅读全文</a>
                     </div>
                 </div>
                 <!--foot-->

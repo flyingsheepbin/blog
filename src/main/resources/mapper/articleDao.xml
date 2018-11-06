@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.blog.article.dao.ArticleDao">
     <select id="getPage" parameterType="int" resultType="com.blog.article.entity.Article">
-        select id,title,descriable from article limit #{p},4;
+        select id,title,article.descriable,article_view_count from article limit #{p},4;
     </select>
     <select id="findOne" resultType="com.blog.article.entity.Article" parameterType="int">
         select id,title,descriable,page from article where id=#{id};
@@ -33,4 +33,7 @@
     <delete id="delete" parameterType="int">
         delete from article where id=#{id};
     </delete>
+    <update id="updateViewCount" >
+        update article set article_view_count=article_view_count+#{arg1} where id = #{arg0};
+    </update>
 </mapper>

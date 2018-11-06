@@ -73,4 +73,6 @@ public interface ArticleDao {
      * @return boolean,make sure article deleted
      */
     boolean delete(int id);
+
+    boolean updateViewCount(int p,int count);
 }

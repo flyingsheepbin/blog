@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.PreDestroy;
+import javax.sound.midi.Soundbank;
 import java.sql.Date;
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -17,24 +20,50 @@ import java.util.List;
 @RequestMapping("/article")
 public class ArticleController {
     private ArticleService service;
-    private static String TBODY;
-    private static String NOW;
-    private static String COUNT;
-    private static int PAGE_LINE;
+    private static final String TBODY;
+    private static final String NOW;
+    private static final String COUNT;
+    private static final int PAGE_LINE;
+    private static final int CACHE_NUM;
+    /*
+     * viewCount
+     * cache every article page view count
+     * HashMap<Integer,Integer>
+     */
+    private static Map<Integer,Integer> viewCount;
 
     static {
         TBODY = "tbody";
         NOW = "now";
         COUNT = "count";
         PAGE_LINE = 10;
+        CACHE_NUM = 20;
+        viewCount = Collections.synchronizedMap(new HashMap<Integer,Integer>());
     }
 
     @Autowired
     public ArticleController(ArticleService service){
         this.service = service;
     }
+
+    /**
+     * @param p the page id
+     * @param m return data model
+     * @return ModelAndView
+     */
     @RequestMapping(value="/{p}",method=RequestMethod.GET)
     public String page(@PathVariable int p,Model m){
+        if(viewCount.get(p)==null){
+            viewCount.put(p,1);
+        }else{
+            viewCount.put(p,viewCount.get(p)+1);
+            System.out.printf(viewCount.get(p)+"");
+            if(viewCount.get(p)>=CACHE_NUM){
+                service.updateViewCount(p);
+                viewCount.put(p,0);
+                System.out.printf("cached");
+            }
+        }
         Article article = service.findOne(p);
         m.addAttribute("obj",article);
         m.addAttribute("active","page");
@@ -94,5 +123,15 @@ public class ArticleController {
         model.addAttribute(NOW,p+1);
         return "/admin/articleList";
     }
-
+    @PreDestroy
+    public void destroy(){
+        Set keySet = viewCount.keySet();
+        Iterator<Integer> iterator = keySet.iterator();
+        while(iterator.hasNext()){
+            int key = iterator.next();
+            int value = viewCount.get(key);
+            service.updateViewCount(key,value);
+            System.out.println(key+":"+value);
+        }
+    }
 }
